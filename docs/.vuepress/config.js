@@ -1,5 +1,5 @@
 module.exports = {
-    title: 'FE BLOB',
+    title: 'Full Stack Blob',
     description: "我是描述...",
     base: '/blob/',
 
@@ -9,6 +9,7 @@ module.exports = {
             { text: '前端技术', link: '/fe/' },
             { text: 'HTTP', link: '/http/' },
             { text: 'Nginx', link: '/nginx/' },
+            { text: '运维部署', link: '/deploy/' },
             { text: 'GitHub', link: 'https://github.com/ZZsimon/blob' }
         ],
         sidebar: {
@@ -28,6 +29,12 @@ module.exports = {
             ],
             '/nginx/': [
                 '',
+            ],
+
+            '/deploy/': [
+                '',
+                'githubActions',
+                'ssh',
             ],
         }
     }

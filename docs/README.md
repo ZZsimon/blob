@@ -2,8 +2,8 @@
 home: true
 # sidebar: false
 # heroImage: /hero.png
-heroText: FE BLOB
-tagline: 前端技术博客
+heroText: Full Stack Blob
+tagline: 全栈技术博客
 actionText: 开始卷 →
 actionLink: /fe/
 ---
