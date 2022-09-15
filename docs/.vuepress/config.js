@@ -1,8 +1,8 @@
 module.exports = {
+    theme: 'reco',
     title: 'Full Stack Blob',
     description: "我是描述...",
     base: '/blob/',
-
     themeConfig: {
         nav: [
             { text: '首页', link: '/' },
@@ -37,5 +37,5 @@ module.exports = {
                 'ssh',
             ],
         }
-    }
+    },
 }
