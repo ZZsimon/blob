@@ -4,6 +4,7 @@ module.exports = {
     description: "我是描述...",
     base: '/blob/',
     themeConfig: {
+        lastUpdated: 'Last Updated', // string | boolean
         nav: [
             { text: '首页', link: '/' },
             { text: '前端技术', link: '/fe/' },
@@ -16,10 +17,19 @@ module.exports = {
             '/fe/': [
                 '',
                 {
-                    title: 'JavaScript',   // 必要的
+                    title: 'JavaScript',
+                    collapsable: false,
                     children: [
-                        '/fe/js/decorator',
                         '/fe/js/promise',
+                        '/fe/js/decorator',
+                    ]
+                },
+
+                {
+                    title: 'mode',
+                    collapsable: false,
+                    children: [
+                        '/fe/designPatterns/observer',
                     ]
                 },
             ],
