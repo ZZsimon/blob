@@ -1,6 +1,7 @@
 module.exports = {
     title: 'FE BLOB',
     description: "我是描述...",
+    base: '/blob/',
 
     themeConfig: {
         nav: [
