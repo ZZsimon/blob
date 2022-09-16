@@ -1,5 +1,5 @@
 ---
-title: promise
+title: Promise
 ---
 ## 1.什么是Promise？
 

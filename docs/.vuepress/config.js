@@ -1,10 +1,13 @@
+const moment = require('moment');
+
+
 module.exports = {
     theme: 'reco',
     title: 'Full Stack Blob',
     description: "我是描述...",
     base: '/blob/',
     themeConfig: {
-        lastUpdated: 'Last Updated', // string | boolean
+        lastUpdated: '上次更新', // string | boolean
         nav: [
             { text: '首页', link: '/' },
             { text: '前端技术', link: '/fe/' },
@@ -48,4 +51,35 @@ module.exports = {
             ],
         }
     },
+
+    plugins: [
+        ['@vuepress-reco/vuepress-plugin-back-to-top', false],
+        'cursor-effects',
+        'dynamic-title',
+        'go-top',
+
+        [
+            'vuepress-plugin-code-copy',
+            {
+                successText: '复制成功！'
+            }
+        ],
+        [
+            '@vuepress-reco/vuepress-plugin-kan-ban-niang',
+            {
+                theme: ['shizuku'],
+                clean: true,
+            }
+        ],
+
+        [
+            '@vuepress/last-updated',
+            {
+                transformer: (timestamp) => {
+                    moment.locale('zh-cn')
+                    return moment(timestamp).fromNow()
+                }
+            }
+        ],
+    ]
 }
