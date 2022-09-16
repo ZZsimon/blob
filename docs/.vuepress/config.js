@@ -29,7 +29,7 @@ module.exports = {
                 },
 
                 {
-                    title: 'mode',
+                    title: '设计模式',
                     collapsable: false,
                     children: [
                         '/fe/designPatterns/observer',
@@ -76,7 +76,7 @@ module.exports = {
             '@vuepress/last-updated',
             {
                 transformer: (timestamp) => {
-                    moment.locale('zh-cn')
+                    moment.locale('zh-CN')
                     return moment(timestamp).fromNow()
                 }
             }
