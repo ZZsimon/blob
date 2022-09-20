@@ -1,6 +1,3 @@
-const moment = require('moment');
-
-
 module.exports = {
     theme: 'reco',
     title: 'Full Stack Blob',
@@ -24,6 +21,7 @@ module.exports = {
                     collapsable: false,
                     children: [
                         '/fe/js/promise',
+                        '/fe/js/class',
                         '/fe/js/decorator',
                     ]
                 },
@@ -76,6 +74,7 @@ module.exports = {
             '@vuepress/last-updated',
             {
                 transformer: (timestamp) => {
+                    const moment = require('moment');
                     moment.locale('zh-CN')
                     return moment(timestamp).fromNow()
                 }
