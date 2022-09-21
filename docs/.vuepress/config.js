@@ -31,6 +31,7 @@ module.exports = {
                     collapsable: false,
                     children: [
                         '/fe/designPatterns/observer',
+                        '/fe/designPatterns/ioc',
                     ]
                 },
             ],
