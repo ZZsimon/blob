@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>控制反转（IoC） | Full Stack Blob</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="我是描述...">
+    
+    <link rel="preload" href="/blob/assets/css/0.styles.1b5bb881.css" as="style"><link rel="preload" href="/blob/assets/js/app.c2c71dbf.js" as="script"><link rel="preload" href="/blob/assets/js/3.9b5b3321.js" as="script"><link rel="preload" href="/blob/assets/js/1.28dfc3a9.js" as="script"><link rel="preload" href="/blob/assets/js/15.7e9dcd4e.js" as="script"><link rel="prefetch" href="/blob/assets/js/10.2e664c7a.js"><link rel="prefetch" href="/blob/assets/js/11.3fb6a03c.js"><link rel="prefetch" href="/blob/assets/js/12.90ce3802.js"><link rel="prefetch" href="/blob/assets/js/13.a24125e2.js"><link rel="prefetch" href="/blob/assets/js/14.f1c9d0c6.js"><link rel="prefetch" href="/blob/assets/js/16.79ee53b0.js"><link rel="prefetch" href="/blob/assets/js/17.46fa9c8b.js"><link rel="prefetch" href="/blob/assets/js/18.87fade82.js"><link rel="prefetch" href="/blob/assets/js/19.bb0f5f2a.js"><link rel="prefetch" href="/blob/assets/js/20.784e39ed.js"><link rel="prefetch" href="/blob/assets/js/21.df27f9a5.js"><link rel="prefetch" href="/blob/assets/js/4.5abcad97.js"><link rel="prefetch" href="/blob/assets/js/5.2cdb7b5f.js"><link rel="prefetch" href="/blob/assets/js/6.a07681f5.js"><link rel="prefetch" href="/blob/assets/js/7.6413a4a9.js"><link rel="prefetch" href="/blob/assets/js/8.215736e5.js"><link rel="prefetch" href="/blob/assets/js/9.63a0682c.js">
+    <link rel="stylesheet" href="/blob/assets/css/0.styles.1b5bb881.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-5bb33761><div data-v-5bb33761><div class="password-shadow password-wrapper-out" style="display:none;" data-v-59e6cb88 data-v-5bb33761 data-v-5bb33761><h3 class="title" data-v-59e6cb88>Full Stack Blob</h3> <p class="description" data-v-59e6cb88>我是描述...</p> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <!---->
+        2022
+      </a></span></div></div> <div class="hide" data-v-5bb33761><header class="navbar" data-v-5bb33761><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blob/" class="home-link router-link-active"><!----> <span class="site-name">Full Stack Blob</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blob/" class="nav-link"><i class="undefined"></i>
+  首页
+</a></div><div class="nav-item"><a href="/blob/fe/" class="nav-link router-link-active"><i class="undefined"></i>
+  前端技术
+</a></div><div class="nav-item"><a href="/blob/http/" class="nav-link"><i class="undefined"></i>
+  HTTP
+</a></div><div class="nav-item"><a href="/blob/nginx/" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></div><div class="nav-item"><a href="/blob/deploy/" class="nav-link"><i class="undefined"></i>
+  运维部署
+</a></div><div class="nav-item"><a href="https://github.com/ZZsimon/blob" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-5bb33761></div> <aside class="sidebar" data-v-5bb33761><div class="personal-info-wrapper" data-v-1fad0c41 data-v-5bb33761><!----> <!----> <div class="num" data-v-1fad0c41><div data-v-1fad0c41><h3 data-v-1fad0c41>11</h3> <h6 data-v-1fad0c41>Articles</h6></div> <div data-v-1fad0c41><h3 data-v-1fad0c41>0</h3> <h6 data-v-1fad0c41>Tags</h6></div></div> <ul class="social-links" data-v-1fad0c41></ul> <hr data-v-1fad0c41></div> <nav class="nav-links"><div class="nav-item"><a href="/blob/" class="nav-link"><i class="undefined"></i>
+  首页
+</a></div><div class="nav-item"><a href="/blob/fe/" class="nav-link router-link-active"><i class="undefined"></i>
+  前端技术
+</a></div><div class="nav-item"><a href="/blob/http/" class="nav-link"><i class="undefined"></i>
+  HTTP
+</a></div><div class="nav-item"><a href="/blob/nginx/" class="nav-link"><i class="undefined"></i>
+  Nginx
+</a></div><div class="nav-item"><a href="/blob/deploy/" class="nav-link"><i class="undefined"></i>
+  运维部署
+</a></div><div class="nav-item"><a href="https://github.com/ZZsimon/blob" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav> <ul class="sidebar-links"><li><a href="/blob/fe/" aria-current="page" class="sidebar-link">前言</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>JavaScript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blob/fe/js/promise.html" class="sidebar-link">Promise</a></li><li><a href="/blob/fe/js/class.html" class="sidebar-link">类 class</a></li><li><a href="/blob/fe/js/decorator.html" class="sidebar-link">装饰器 Decorator</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>设计模式</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blob/fe/designPatterns/observer.html" class="sidebar-link">观察者模式</a></li><li><a href="/blob/fe/designPatterns/ioc.html" aria-current="page" class="active sidebar-link">控制反转（IoC）</a></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-59e6cb88 data-v-5bb33761><h3 class="title" data-v-59e6cb88>控制反转（IoC）</h3> <!----> <label id="box" class="inputBox" data-v-59e6cb88><input type="password" value="" data-v-59e6cb88> <span data-v-59e6cb88>Konck! Knock!</span> <button data-v-59e6cb88>OK</button></label> <div class="footer" data-v-59e6cb88><span data-v-59e6cb88><i class="iconfont reco-theme" data-v-59e6cb88></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-59e6cb88>vuePress-theme-reco</a></span> <span data-v-59e6cb88><i class="iconfont reco-copyright" data-v-59e6cb88></i> <a data-v-59e6cb88><!---->
+          
+        <!---->
+        2022
+      </a></span></div></div> <div data-v-5bb33761><div data-v-5bb33761><main class="page" style="padding-right:0;"><section style="display:;"><div class="page-title"><h1 class="title">控制反转（IoC）</h1> <div data-v-8a445198><!----> <!----> <!----> <!----></div></div> <div class="theme-reco-content content__default"><h2 id="_1-什么是ioc"><a href="#_1-什么是ioc" class="header-anchor">#</a> 1.什么是IoC？</h2> <p>IoC它的全称叫做 <code>Inversion of Control</code>，可翻译为为「控制反转」或「依赖倒置」。IoC首先是一种思想，基于这个思想，可以有很多的实现方式。IoC这个思想主要包含了三个准则：</p> <ul><li>高层次的模块不应该依赖于低层次的模块，它们都应该依赖于抽象</li> <li>抽象不应该依赖于具体实现，具体实现应该依赖于抽象</li> <li><strong>面向接口编程</strong>而不要面向实现编程</li></ul> <h2 id="_2-ioc出现的背景"><a href="#_2-ioc出现的背景" class="header-anchor">#</a> 2.IoC出现的背景</h2> <p>先使用一个简单的例子来理解Ioc</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// app.js</span>
+<span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'./modules/Router'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Track <span class="token keyword">from</span> <span class="token string">'./modules/Track'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>options <span class="token operator">=</span> options<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>track <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Track</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span><span class="token function">to</span><span class="token punctuation">(</span><span class="token string">'home'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>track<span class="token punctuation">.</span><span class="token function">tracking</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// index.js</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'path/to/App'</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>如果router模块需要新增 <code>history模式</code> ，不仅要改<strong>router模块</strong>代码，还需要修改<strong>App模块</strong>：<code>new Router({ mode: 'history' })</code></p> <p>这就出现问题了，我们并不想要修改<strong>App代码</strong>。那么怎么解决呢？</p> <p>事实上，这个问题的本质是模块之间的依赖问题。<code>App模块</code>是高层模块，其他模块是底层模块。<code>App模块</code> 依赖了<strong>Router模块</strong>和<strong>Track模块</strong>，内部直接使用了底层模块，导致一旦修改了底层模块，<code>App模块</code> 就需要相应的修改。</p> <h2 id="_3-di-依赖注入"><a href="#_3-di-依赖注入" class="header-anchor">#</a> 3.DI（依赖注入）</h2> <p>把App所依赖的模块通过传递参数的方式注入到App内部去，让App内部不再依赖具体的模块，这就是 <code>DI（依赖注入）</code>。</p> <p>本质上，IoC思想的目的就是将<strong>依赖解耦</strong>，而 <code>DI（依赖注入）</code> 就是一种<strong>基于IoC思想</strong>实现的一种编程方式，这种编程方式解决了高层模块和底层模块互相依赖的问题。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// app.js</span>
+<span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'./modules/Router'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Track <span class="token keyword">from</span> <span class="token string">'./modules/Track'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>options <span class="token operator">=</span> options<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>router <span class="token operator">=</span> options<span class="token punctuation">.</span>router
+        <span class="token keyword">this</span><span class="token punctuation">.</span>router <span class="token operator">=</span> options<span class="token punctuation">.</span>track
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span><span class="token function">to</span><span class="token punctuation">(</span><span class="token string">'home'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>track<span class="token punctuation">.</span><span class="token function">tracking</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// index.js</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'path/to/App'</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">App</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">router</span><span class="token operator">:</span><span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'history'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">track</span><span class="token operator">:</span><span class="token keyword">new</span> <span class="token class-name">Track</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>但是如果此时，App模块需要增加一个分享模块 <code>Share</code> ，那又要修改<strong>App代码</strong>了。需要添加代码 <code>this.share = options.share</code></p> <p>虽然 App 通过依赖注入的方式在一定程度上解耦了与其他几个模块的依赖关系，但是还不够彻底。</p> <p><strong>IoC设计模式</strong>要求模块（比如App模块）需要依赖抽象，而不是具体的实现。这里App所依赖的传入的参数<code>this.router</code>、<code>this.track</code>、<code>this.share</code>都是一些具体的实现，而不是抽象的概念。</p> <p>也就是说此时实现的“依赖注入”，并不符合IoC的思想。</p> <h2 id="_4-dip-依赖反转原则"><a href="#_4-dip-依赖反转原则" class="header-anchor">#</a> 4.DIP（依赖反转原则）</h2> <p><code>依赖反转原则（Dependency inversion principle，DIP）</code> 规定：</p> <ul><li>高层次的模块不应该依赖与低层次的模块，两者都应该依赖于抽象接口。</li> <li>抽象接口不应该依赖于具体实现。而具体实现则应该依赖于抽象接口。</li></ul> <p>把App模块中的<strong>具体实现</strong>（this.router、this.track、this.share）抽象出来，内部的 <code>use</code> 方法可以将模块保存到 <code>modules</code> 这个数组中。通过 <code>initModules</code> 可以初始化每个模块，而不是直接依赖这些模块。</p> <p>此时，App内部已经没有具体的业务逻辑了，但是它要求每个模块都需要一个 <code>init方法</code> 来初始化模块。而这就是遵循了 <code>DIP以及IoC的思想 - 面向接口编程而不是实现编程</code>。此时App内部的代码依赖的是 <code>init方法</code> 这个接口，而不是具体的业务代码。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// app.js</span>
+<span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'./modules/Router'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Track <span class="token keyword">from</span> <span class="token string">'./modules/Track'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> modules <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">static</span> <span class="token function">use</span><span class="token punctuation">(</span><span class="token parameter">module</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>module<span class="token punctuation">)</span> <span class="token operator">?</span> module<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> App<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">:</span> App<span class="token punctuation">.</span>modules<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>module<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>options <span class="token operator">=</span> options<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initModules</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+     <span class="token function">initModules</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        App<span class="token punctuation">.</span>modules<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">module</span> <span class="token operator">=&gt;</span> module<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// modules/Router.js</span>
+<span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'path/to/Router'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token parameter">app</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        app<span class="token punctuation">.</span>router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span>options<span class="token punctuation">.</span>router<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// modules/Track.js</span>
+<span class="token keyword">import</span> Track <span class="token keyword">from</span> <span class="token string">'path/to/Track'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token parameter">app</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        app<span class="token punctuation">.</span>track <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Track</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span>options<span class="token punctuation">.</span>track<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        app<span class="token punctuation">.</span>track<span class="token punctuation">.</span><span class="token function">tracking</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// index.js</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'path/to/App'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'./modules/Router'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Track <span class="token keyword">from</span> <span class="token string">'./modules/Track'</span><span class="token punctuation">;</span>
+
+App<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">[</span>Router<span class="token punctuation">,</span> Track<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">new</span> <span class="token class-name">App</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">router</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'history'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">track</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// ...</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="_5-总结"><a href="#_5-总结" class="header-anchor">#</a> 5.总结</h2> <p><strong>IoC首先是一种思想</strong>，<code>依赖注入</code> 是基于Ioc思想实现的一种编程方式。而这里的App是一个 <code>IoC容器</code>，它可以添加、管理依赖。</p></div></section> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">2 分钟前</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/blob/fe/designPatterns/observer.html" class="prev">
+          观察者模式
+        </a></span> <!----></p></div> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:0;" data-v-ac050c62></ul></main></div> <!----></div></div></div></div><div class="global-ui"><canvas id="vuepress-canvas-cursor"></canvas><div></div><div id="goTop" class="hide-cat" data-v-bf92849a></div><div class="kanbanniang" data-v-5775ee02><div class="banniang-container" style="display:;" data-v-5775ee02><div class="messageBox" style="right:68px;bottom:190px;display:none;" data-v-5775ee02>
+      欢迎来到 Full Stack Blob
+    </div> <div class="operation" style="right:90px;bottom:40px;display:none;" data-v-5775ee02><i class="kbnfont kbn-ban-home ban-home" data-v-5775ee02></i> <i class="kbnfont kbn-ban-message message" data-v-5775ee02></i> <i class="kbnfont kbn-ban-close close" data-v-5775ee02></i> <a target="_blank" href="https://vuepress-theme-reco.recoluan.com/views/plugins/kanbanniang.html" data-v-5775ee02><i class="kbnfont kbn-ban-info info" data-v-5775ee02></i></a> <i class="kbnfont kbn-ban-theme skin" style="display:none;" data-v-5775ee02></i></div> <canvas id="banniang" width="150" height="220" class="live2d" style="right:90px;bottom:-20px;opacity:0.9;" data-v-5775ee02></canvas></div> <div class="showBanNiang" style="display:none;" data-v-5775ee02>
+    看板娘
+  </div></div></div></div>
+    <script src="/blob/assets/js/app.c2c71dbf.js" defer></script><script src="/blob/assets/js/3.9b5b3321.js" defer></script><script src="/blob/assets/js/1.28dfc3a9.js" defer></script><script src="/blob/assets/js/15.7e9dcd4e.js" defer></script>
+  </body>
+</html>
