@@ -8,6 +8,7 @@ module.exports = {
         nav: [
             { text: '首页', link: '/' },
             { text: '前端技术', link: '/fe/' },
+            { text: 'Java技术', link: '/java/' },
             { text: 'HTTP', link: '/http/' },
             { text: 'Nginx', link: '/nginx/' },
             { text: '运维部署', link: '/deploy/' },
@@ -47,6 +48,27 @@ module.exports = {
                 '',
                 'githubActions',
                 'ssh',
+            ],
+
+            '/java/': [
+                '',
+                {
+                    title: '基础概念',
+                    collapsable: false,
+                    children: [
+                        '/java/basic/1_dataType',
+                        '/java/basic/2_operation',
+                        '/java/basic/3_processControl',
+                    ]
+                },
+
+                {
+                    title: '面向对象',
+                    collapsable: false,
+                    children: [
+                        '/java/objectOriented/1_basic',
+                    ]
+                },
             ],
         }
     },
