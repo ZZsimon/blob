@@ -47,8 +47,6 @@ int a = 2;
 boolean res = a == 2;
 ```
 
-参考链接：[负数的二进制使用补码方式来计算](https://blog.csdn.net/android_cai_niao/article/details/122209215)
-
 ## 4.字符和字符串运算
 ```java
  // 字符的类型是char，占用2个字节内存
@@ -92,3 +90,5 @@ String s = names[1];
 names[1] = "cat";
 System.out.println(s); // s是"XYZ"还是"cat"?
 ```
+
+参考链接：[负数的二进制使用补码方式来计算](https://blog.csdn.net/android_cai_niao/article/details/122209215)

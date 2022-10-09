@@ -59,6 +59,7 @@ module.exports = {
                         '/java/basic/1_dataType',
                         '/java/basic/2_operation',
                         '/java/basic/3_processControl',
+                        '/java/basic/4_array',
                     ]
                 },
 
