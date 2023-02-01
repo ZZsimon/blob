@@ -41,7 +41,7 @@ String str = Arrays.deepToString(ns2);
 System.out.println(str); // [[4, 5, 6], [1, 2, 3], [7, 8, 9]]
 ```
 
-## 2.命令行参数
+## 3.命令行参数
 ```java
 // Java程序的入口是main方法，main方法可以接受一个参数
 // public static void main(String[] args) { ... }

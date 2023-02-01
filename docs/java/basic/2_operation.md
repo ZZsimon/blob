@@ -73,6 +73,13 @@ System.out.println(s3); // 浙江宁波家乡
 
 String s4 = s3 + '！';
 System.out.println(s4); // 浙江宁波家乡！
+
+// 字符串不可变！
+String s = "hello";
+String t = s;
+s = "world";
+System.out.println(t); // t是"hello"还是"world"?
+
 ```
 
 ## 5.数组运算

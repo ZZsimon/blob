@@ -9,6 +9,7 @@ module.exports = {
             { text: '首页', link: '/' },
             { text: '前端技术', link: '/fe/' },
             { text: 'Java技术', link: '/java/' },
+            { text: '汽车软件', link: '/ee/' },
             { text: 'HTTP', link: '/http/' },
             { text: 'Nginx', link: '/nginx/' },
             { text: '运维部署', link: '/deploy/' },
